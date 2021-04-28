@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>并发漏洞数据分析可视化展示</title>
+    <link href="../styles/index.css" rel="stylesheet">
+    <script src="../scripts/Plugin/jquery-3.3.1.min.js"></script>
+    <script src="../scripts/Plugin/echarts.min.js"></script>
+    <script src="../scripts/Plugin/bmap.min.js"></script>
+<!--    <script src="http://api.map.baidu.com/api?v=2.0&ak=LelFSt6BfykGf8m3PB5zr8LaXAG2cMg6"></script>-->
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/quota.js"></script>
+</head>
+<body>
+<!--顶部-->
+<header class="header left">
+  <div class="left nav">
+      <ul>
+          <li class="nav_active"><i class="nav_1"></i><a href="../index.html">数据概况</a> </li>
+          <li class="nav_active"><i class="nav_2"></i><a href="quota.html">属性分析</a> </li>
+          <li class="nav_active"><i class="nav_3"></i><a href="trend.html">因果分析</a> </li>
+          <li class="nav_active"><i class="nav_4"></i><a href="chronic.html">数据列表</a> </li>
+          </ul>
+  </div>
+    <div class="header_center left" style="position:relative">
+        
+        <h2><strong>并发漏洞分析可视化展示</strong></h2>
+
+    </div>
+    <div class="right nav text_right">
+        <ul>
+
+        </ul>
+    </div>
+
+</header>
+
+   // 统计分析图
+    <div class="div_any">
+        <div class="left div_any01">
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="../images/title_5.png">baseScore分布</div>
+                <p id="histogramChart1" class="p_chart"></p>
+            </div>
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="../images/title_6.png">Authentication分布</div>
+                <p id="histogramChart2" class="p_chart"></p>
+            </div>
+        </div>
+        <div class="left div_any01">
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="../images/title_7.png">impactScore分布</div>
+                <p id="lineChart1" class="p_chart"></p>
+            </div>
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="../images/title_8.png">integrityImpact情况</div>
+                <p id="lineChart2" class="p_chart"></p>
+            </div>
+        </div>
+        <div class="left div_any01">
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="../images/title_9.png">accessVector情况</div>
+                <p id="histogramChart3" class="p_chart"></p>
+            </div>
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="../images/title_10.png">confidentialityImpact情况</div>
+                <p id="histogramChart4" class="p_chart"></p>
+            </div>
+        </div>
+        <div class="left div_any01">
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="../images/title_11.png">accessComplexity情况</div>
+                <p id="pieChart1" class="p_chart"></p>
+            </div>
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="../images/title_12.png">availabilityImpact情况</div>
+                <p id="pieChart2" class="p_chart"></p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

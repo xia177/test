@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=0.5" />
+    <title>并发漏洞分析数据可视化展示</title>
+   <link href="./styles/index.css" rel="stylesheet">
+    <script src="./scripts/bg.js"></script>
+    <script src="./scripts/Plugin/jquery-3.3.1.min.js"></script>
+    <script src="./scripts/Plugin/echarts.min.js"></script>
+    <script src="./scripts/Plugin/bmap.min.js"></script>
+<!--    <script src="http://api.map.baidu.com/api?v=2.0&ak=LelFSt6BfykGf8m3PB5zr8LaXAG2cMg6"></script>-->
+    <script src="./scripts/common.js"></script>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/Plugin/laydate/laydate.js"></script>
+</head>
+<body>
+<!--顶部-->
+<header class="header left">
+    <div class="left nav">
+        <ul>
+            <li class="nav_active"><i class="nav_1"></i><a href="index.html">数据概况</a> </li>
+          <li class="nav_active"><i class="nav_2"></i><a href="./views/quota.html">属性分析</a> </li>
+          <li class="nav_active"><i class="nav_3"></i><a href="./views/trend.html">因果分析</a> </li>
+          <li class="nav_active"><i class="nav_4"></i><a href="./views/chronic.html">数据列表</a> </li>
+            </ul>
+    </div>
+    <div class="header_center left" style="position:relative">
+        
+        <h2><strong>并发漏洞数据分析可视化展示</strong></h2>
+
+    </div>
+    <div class="right nav text_right">
+        <ul>
+
+        </ul>
+    </div>
+
+</header>
+<!--内容部分-->
+<div class="con left">
+    <!--数据总概-->
+    <div class="con_div">
+        <div class="con_div_text left">
+            <div class="con_div_text01 left">
+                <img src="./images/info_1.png" class="left text01_img"/>
+                <div class="left text01_div">
+                    <p>采集总数据量(条)</p>
+                    <p>161331</p>
+                </div>
+            </div>
+            <div class="con_div_text01 right">
+                <img src="./images/info_2.png" class="left text01_img"/>
+                <div class="left text01_div">
+                    <p>并发漏洞数据量(条)</p>
+                    <p>748</p>
+                </div>
+            </div>
+        </div>
+        <div class="con_div_text left">
+            <div class="con_div_text01 left">
+                <img src="./images/info_3.png" class="left text01_img"/>
+                <div class="left text01_div">
+                    <p>并发漏洞占比（%）</p>
+                    <p class="sky">0.463%</p>
+                </div>
+            </div>
+            <div class="con_div_text01 right">
+                <img src="./images/info_4.png" class="left text01_img"/>
+                <div class="left text01_div">
+                    <p>数据跨度（年限）</p>
+                    <p class="sky">1999-2021.3</p>
+                </div>
+            </div>
+        </div>
+        <div class="con_div_text left">
+
+            <div class="con_div_text01 left">
+                <img src="./images/info_5.png" class="left text01_img"/>
+                <div class="left text01_div">
+                    <p>数据来源</p>
+                    <p class="org">NVD</p>
+                </div>
+            </div>
+            <div class="con_div_text01 right">
+                <img src="./images/info_6.png" class="left text01_img"/>
+                <div class="left text01_div">
+                    <p>分析维度（个）</p>
+                    <p class="org">15</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--统计分析图-->
+    <div class="div_any">
+        <div class="left div_any01">
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="./images/title_1.png">Severity情况</div>
+                <p id="rankChart" class="p_chart"></p>
+            </div>
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="./images/title_2.png">CWE种类TOP10</div>
+                <p id="histogramChart" class="p_chart"></p>
+            </div>
+        </div>
+        <div class="div_any02 left ">
+            <div class="div_any_child div_height">
+                <div class="div_any_title any_title_width"><img src="./images/title_0.png">分析结论</div>
+<!--                <div id="mapChart" style="width:97.5%;height:95%;display: inline-block;padding-left: 1.25%;padding-top:2.2%"></div>-->
+                 <div class="table_q">
+                    <table>
+                        <thead>
+<!--                            <tr>-->
+<!--                                <th>序号</th>-->
+<!--                                <th>结论</th>-->
+<!--                            </tr>-->
+                        </thead>
+                        <tbody>
+                        <tr><td>1</td><td>造成并发漏洞原因主要有15大类，其中race condition(70.95%)为主要原因</td></tr>
+                        <tr><td>2</td><td>并发漏洞造成后果中最容易导致的为denial of service（DOS)，占比33.87%，privilege escalation(18.47%)</td></tr>
+                        <tr><td>3</td><td>从1999年开始到2020年，并发漏洞披露数量呈上升趋势；2017年至2020年数量最多</td></tr>
+                        <tr><td>4</td><td>披露并发漏洞CWE类型中87%为CWE362，13%为其他CWE</td></tr>
+                        <tr><td>5</td><td>所分析的并发漏洞的severity(危害)medium最多（67%），High次之（18%），Low最少（15%）</td></tr>
+                        <tr><td>6</td><td>并发漏洞分三种方式被利用，本地利用，网络利用，相邻网络利用；多为本地利用（53%）和网络利用（45%）</td></tr>
+                        <tr><td>7</td><td>利用并发漏洞需要攻击的复杂性中等复杂性最多（67%），有17%被攻击复杂性低，16%攻击复杂性高，不易被攻击</td></tr>
+                        <tr><td>8</td><td>利用漏洞不需要向漏洞进行验证的并发漏洞占比高（94%），需要一个身份验证实例的6%，两个以上几乎没有</td></tr>
+                        <tr><td>9</td><td>成功利用并发漏洞，会造成全部信息泄露的为30%，造成部分信息泄露的有37%，有32%对系统保密性无影响</td></tr>
+                        <tr><td>10</td><td>29%的并发漏洞被成功利用，将导致系统保护完全丧失；34%导致系统信息修改；37%不会对系统完整性造成影响</td></tr>
+                        <tr><td>11</td><td>45%的并发漏洞被成功利用，会引起资源完全不可用；40%将引起性能降低可用性降低，有15%对系统可用性无影响</td></tr>
+                        <tr><td>12</td><td>基准分分数徘徊于6.9（14%），6.8（8%），4.4（10%），其中分数为10分的为0.5%，最低分数为2.1（1.7%）</td></tr>
+                        </tbody>
+                    </table>
+<!--                <p id="lineChart2" class="p_chart"></p>-->
+<!--                这一行展示图形的代码-->
+                 </div>
+            </div>
+        </div>
+        <div class="right div_any01">
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="./images/title_3.png">并发漏洞年份情况</div>
+                <p id="lineChart" class="p_chart"></p>
+            </div>
+            <div class="div_any_child">
+                <div class="div_any_title"><img src="./images/title_4.png">属性解释</div>
+                <div class="table_p">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>解释</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>baseScore</td><td>漏洞内在的基本特征打分</td></tr>
+                        <tr><td>AccessVector</td><td>反映了漏洞如何被利用</td></tr>
+                        <tr><td>AccessComplexity</td><td>攻击者获得访问权，利用漏洞所需要攻击的复杂性</td></tr>
+                        <tr><td>Authentication</td><td>度量攻击者为了利用漏洞必须向目标验证的次数</td></tr>
+                        <tr><td>ConfidentialityImpact</td><td>度量成功利用漏洞对机密性的影响</td></tr>
+                        <tr><td>IntegrityImpact</td><td>度量成功利用漏洞对完整性的影响</td></tr>
+                        <tr><td>AvailabilityImpact </td><td>度量成功利用漏洞对可用性的影响</td></tr>
+                        <tr><td>Severity</td><td>度量漏洞的风险性，高中低</td></tr>
+                        </tbody>
+                    </table>
+<!--                <p id="lineChart2" class="p_chart"></p>-->
+<!--                这一行展示图形的代码-->
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

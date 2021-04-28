@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>并发漏洞数据分析可视化展示</title>
+  <link rel="stylesheet"href="../styles/index.css"/>
+    <script src="../scripts/Plugin/jquery-3.3.1.min.js"></script>
+    <script src="../scripts/Plugin/echarts.min.js"></script>
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/trend.js"></script>
+</head>
+<body>
+<!--顶部-->
+<header class="header left">
+    <div class="left nav">
+        <ul>
+            <li class="nav_active"><i class="nav_1"></i><a href="../index.html">数据概况</a> </li>
+          <li class="nav_active"><i class="nav_2"></i><a href="quota.html">属性分析</a> </li>
+          <li class="nav_active"><i class="nav_3"></i><a href="trend.html">因果分析</a> </li>
+          <li class="nav_active"><i class="nav_4"></i><a href="chronic.html">数据列表</a> </li>
+            </ul>
+    </div>
+    <div class="header_center left" style="position:relative">
+
+        <h2><strong>并发漏洞分析可视化展示</strong></h2>
+
+    </div>
+    <div class="right nav text_right">
+        <ul>
+
+        </ul>
+    </div>
+
+</header>
+<!--内容部分-->
+<div class="con left" style="width:50%;">
+    <!--统计分析图-->
+<!--    调节高度就调height这个框框,下面660px的height改变大小-->
+    <div class="div_any">
+        <div class="left div_any01" style="width:100%;">
+            <div class="div_any_child" style="width:98%;position:relative;height:785px;margin-top:0px;">
+                <div class="div_any_title"><img src="../images/title_13.png">原因分析(15大类，85小类)</div>
+                <div id="histogramChart1"  style="width:100%;display: inline-block;height: 750px;margin-top:-40px;"></div>
+
+                </div>
+            </div>
+        </div>
+
+</div>
+<div class="con right" style="width:50%;height:100%">
+  <div class="div_any">
+      <div class="left div_any01" style="width:100%;">
+          <div class="div_any_child" style="width:100%;position:relative;height:785px;margin-top:0px;">
+              <div class="div_any_title"><img src="../images/title_17.png">结果分析(23类)</div>
+              <div id="histogramChart3"  style="width:120%;display: inline-block;height:600px;margin-top:50px;"></div>
+<!--              <div id="lineChart2"  style="width: 52%;height: 100%;display: inline-block;"></div>-->
+          </div>
+      </div>
+
+  </div>
+</div>
+</body>
+</html>
